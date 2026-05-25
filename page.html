@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrimeCreative|戦略から設計するホームページ制作</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700&family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo">
+          <span class="logo">
+            <img src="image/logo.png" alt="Partnersロゴ" />
+          </span>
+        </a>
+        <nav class="header__nav">
+          <ul class="nav__list">
+            <li><a href="index.html#about">私たちについて</a></li>
+            <li><a href="index.html#case">制作実績</a></li>
+            <li><a href="index.html#service">事業紹介</a></li>
+            <li><a href="index.html#contact">お問い合わせ</a></li>
+          </ul>
+        </nav>
+        <button class="header__hamburger" id="hamburger" aria-label="メニュー">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- ==================== PAGE HERO ==================== -->
+    <section class="page-hero">
+      <span class="page-hero__label">About Us</span>
+      <h1 class="page-hero__title">私たちについて</h1>
+    </section>
+
+    <!-- ==================== INTRO ==================== -->
+    <section class="intro-wrapper">
+      <div class="intro reveal">
+        <div class="intro__text-block">
+          <div class="section__label">About This Service</div>
+          <h2 class="intro__catch">
+            単なる制作会社ではない<br />ビジネスパートナーとして関わっていきます
+          </h2>
+          <p class="intro__body">
+            私たちパートナーズは、単なるホームページ制作会社ではありません。戦略設計からデザイン・開発・運用まで一貫してサポートすることで、クライアントのビジネス成果に直結するサービスを提供しています。おしゃれなサイトを作るだけでなく、売上や集客などの具体的な成果を追求し、クライアントと共に成長していくことを目指しています。
+          </p>
+          <a href="#contact" class="pill-btn">
+            <span class="pill-btn__text">無料査定を依頼する</span>
+            <span class="pill-btn__icon">
+              <svg width="15" height="15" viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M2 6H10M7 3L10 6L7 9"
+                  stroke="#3E64EA"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+
+        <div class="intro__image">
+          <img
+            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+            alt="不動産売却のプロフェッショナル"
+            loading="lazy"
+          />
+          <div class="intro__image-badge">累計取引実績 1,000件以上</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FEATURES ==================== -->
+    <section class="features">
+      <div class="section__label reveal">Our Features</div>
+      <h2 class="section__heading reveal">選ばれる3つの理由</h2>
+
+      <div class="features__grid">
+        <!-- Feature 01 -->
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-card__icon">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+          </div>
+          <span class="feature-card__num">Feature 01</span>
+          <h3 class="feature-card__ttl">ブランド設計から考える</h3>
+          <p class="feature-card__txt">
+            おしゃれなホームページがあっても、売上が上がらなければ意味がありません。私たちは、戦略設計からデザイン・運用まで一貫して行うことで、ビジネスの成果に直結するホームページを制作します。
+          </p>
+        </div>
+
+        <!-- Feature 02 -->
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-card__icon" style="background: var(--c-orange)">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <span class="feature-card__num">Feature 02</span>
+          <h3 class="feature-card__ttl">スピーディーな制作工程</h3>
+          <p class="feature-card__txt">
+            従来のホームページ制作は、要件定義から公開まで数ヶ月かかることも珍しくありません。私たちは、独自の制作フレームワークと効率的なワークフローを構築することで、最短4週間での公開を実現します。
+          </p>
+        </div>
+
+        <!-- Feature 03 -->
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-card__icon" style="background: #1ea364">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+          <span class="feature-card__num">Feature 03</span>
+          <h3 class="feature-card__ttl">マーケティングもお任せ</h3>
+          <p class="feature-card__txt">
+            実はサイトは公開しただけではほとんど閲覧されません。その後の運用が重要になります。私たちは、SEO対策や広告運用などのマーケティング施策も一貫してサポートし、集客から成約までをトータルで支援します。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== STRENGTHS ==================== -->
+    <section class="strengths c-blue" id="strengths">
+      <div class="strengths__header reveal">
+        <span class="strengths__label">Why Partners?</span>
+        <h2 class="strengths__question">
+          なぜ、<em>「確実に」</em><em>「多く売る」</em><em>「早く」</em><br />
+          売れるのか？
+        </h2>
+      </div>
+
+      <div class="strengths__items">
+        <!-- Strength 01 -->
+        <div class="strengths__item reveal">
+          <div class="strengths__item-img">
+            <img
+              src="https://images.unsplash.com/photo-1553484771-898ed465e931?w=400&q=80"
+              alt="ネットワーク"
+              loading="lazy"
+            />
+          </div>
+          <div class="strengths__item-content">
+            <div class="strengths__item-num">Strength 01</div>
+            <h3 class="strengths__item-ttl">
+              パートナーズの強みは、独自の全国投資家ネットワーク。<br />
+              売買実績No.1※「RENOSY」での販売力
+            </h3>
+            <p class="strengths__item-txt">
+              日本最大級の不動産投資プラットフォームREINOSYに掲載されるため、全国の投資家から問い合わせが集まります。一般的な不動産仲介では到達できない潜在買主層へのアクセスが可能です。
+            </p>
+          </div>
+        </div>
+
+        <!-- Strength 02 -->
+        <div class="strengths__item reveal">
+          <div class="strengths__item-img">
+            <img
+              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=400&q=80"
+              alt="チーム"
+              loading="lazy"
+            />
+          </div>
+          <div class="strengths__item-content">
+            <div class="strengths__item-num">Strength 02</div>
+            <h3 class="strengths__item-ttl">
+              法人の売上高大手に支えられた入社難易度<br />
+              500名以上との商談に臨んだ実績あるチーム
+            </h3>
+            <p class="strengths__item-txt">
+              経験豊富な専任エージェントが、オーナー様の状況に合わせた最適な売却戦略を立案・実行。売却価格の最大化と手続きのスピード化を同時に実現します。
+            </p>
+          </div>
+        </div>
+
+        <!-- Strength 03 -->
+        <div class="strengths__item reveal">
+          <div class="strengths__item-img">
+            <img
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80"
+              alt="ネットワーク地図"
+              loading="lazy"
+            />
+          </div>
+          <div class="strengths__item-content">
+            <div class="strengths__item-num">Strength 03</div>
+            <h3 class="strengths__item-ttl">
+              仲業最大級の日本全国<br />
+              不動産プラットフォーム「決済拠点」活用で<br />
+              中部圏以外への対応も拡充
+            </h3>
+            <p class="strengths__item-txt">
+              全国主要都市に拠点を展開し、地方物件から都心物件まで幅広くカバー。どのエリアの物件でも最適な売却をご支援します。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="contact" id="contact">
+      <a href="#" class="contact__inner">
+        <div class="contact__deco contact__deco--left" aria-hidden="true"></div>
+        <div
+          class="contact__deco contact__deco--right"
+          aria-hidden="true"
+        ></div>
+        <div class="contact__text-block">
+          <h2 class="contact__heading">Contact</h2>
+          <p class="contact__sub">
+            お見積り、サービス内容、ご相談などまずはお気軽にご相談ください。
+          </p>
+        </div>
+        <div class="contact__icon-wrap">
+          <button class="contact__icon-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path
+                d="M4 10H16M12 6L16 10L12 14"
+                stroke="#3E64EA"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </a>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" id="footer">
+      <div class="footer__inner">
+        <div class="footer__logo-col">
+          <img src="image/logo.png" alt="Partnersロゴ" class="footer__logo" />
+        </div>
+        <nav class="footer__nav">
+          <div>
+            <ul class="footer__nav-list">
+              <li><a href="#">私たちについて</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="footer__nav-list">
+              <li><a href="#">制作実績</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="footer__nav-list">
+              <li><a href="#">事業紹介</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="footer__nav-list">
+              <li><a href="#">お問い合わせ</a></li>
+            </ul>
+          </div>
+          <div>
+            <ul class="footer__nav-list">
+              <li><a href="#">プライバシーポリシー</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <p class="footer__copy">© 2026 Partners Inc. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
