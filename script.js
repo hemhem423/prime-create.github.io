@@ -1,7 +1,7 @@
 /* ============================================================
-   script.js
-   Interactions: header scroll, blob animation,
-   hamburger menu, scroll-reveal, smooth anchor, stagger cards,
+   script.js  –  Partners
+   Interactions: header scroll, hamburger menu,
+   scroll-reveal, smooth anchor, stagger cards,
    watermark slide-in, scroll indicator, carousel dots
    ============================================================ */
 
@@ -9,7 +9,7 @@
   'use strict';
 
   /* ----------------------------------------------------------
-     1. HEADER – shrink + shadow on scroll
+     1. HEADER – shadow on scroll
   ---------------------------------------------------------- */
   const header = document.getElementById('header');
 
@@ -38,20 +38,20 @@
       const spans = hamburger.querySelectorAll('span');
       if (isOpen) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
+        spans[1].style.opacity   = '0';
         spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
       } else {
         spans.forEach(sp => { sp.style.transform = ''; sp.style.opacity = ''; });
       }
     });
 
-    // Close on nav link click
+    // ナビリンク押下でメニューを閉じる
     nav.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         nav.classList.remove('open');
         hamburger.querySelectorAll('span').forEach(sp => {
           sp.style.transform = '';
-          sp.style.opacity = '';
+          sp.style.opacity   = '';
         });
       });
     });
@@ -59,27 +59,7 @@
 
 
   /* ----------------------------------------------------------
-     3. BLOB MOUSE PARALLAX (subtle)
-  ---------------------------------------------------------- */
-  const blobs = document.querySelectorAll('.blob');
-
-  if (blobs.length) {
-    document.addEventListener('mousemove', (e) => {
-      const cx = window.innerWidth / 2;
-      const cy = window.innerHeight / 2;
-      const dx = (e.clientX - cx) / cx; // -1 .. 1
-      const dy = (e.clientY - cy) / cy;
-
-      blobs.forEach((blob, i) => {
-        const factor = (i + 1) * 6;
-        blob.style.transform = `translate(${dx * factor}px, ${dy * factor}px)`;
-      });
-    });
-  }
-
-
-  /* ----------------------------------------------------------
-     4. SCROLL REVEAL (IntersectionObserver)
+     3. SCROLL REVEAL（IntersectionObserver）
   ---------------------------------------------------------- */
   const revealTargets = [
     { selector: '.service__item',        delay: 0    },
@@ -88,8 +68,6 @@
     { selector: '.feature-card',         delay: true },
     { selector: '.voice-card',           delay: true },
     { selector: '.contact__inner',       delay: 0    },
-    { selector: '.case__grid-header',    delay: 0    },
-    { selector: '.column__grid-header',  delay: 0    },
     { selector: '.section__header-mask', delay: 0    },
   ];
 
@@ -118,21 +96,21 @@
 
 
   /* ----------------------------------------------------------
-     5. SCROLL INDICATOR – hide after first scroll
+     4. SCROLL INDICATOR – スクロール後に非表示
   ---------------------------------------------------------- */
   const scrollIndicator = document.querySelector('.scroll-indicator');
 
   if (scrollIndicator) {
     window.addEventListener('scroll', () => {
       const hidden = window.scrollY > 80;
-      scrollIndicator.style.opacity = hidden ? '0' : '1';
+      scrollIndicator.style.opacity       = hidden ? '0' : '1';
       scrollIndicator.style.pointerEvents = hidden ? 'none' : '';
     }, { passive: true });
   }
 
 
   /* ----------------------------------------------------------
-     6. SMOOTH ANCHOR SCROLL (offset for fixed header)
+     5. SMOOTH ANCHOR SCROLL（固定ヘッダー分オフセット）
   ---------------------------------------------------------- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -150,17 +128,18 @@
 
 
   /* ----------------------------------------------------------
-     7. CTA BUTTON – pulse effect
+     6. ボタン hover – spring トランジション付与
   ---------------------------------------------------------- */
   document.querySelectorAll('.event-arrow, .pill-btn, .contact__icon-btn').forEach(btn => {
     btn.addEventListener('mouseenter', () => {
-      btn.style.transition = 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s';
+      btn.style.transition =
+        'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s';
     });
   });
 
 
   /* ----------------------------------------------------------
-     8. STAGGER CARDS on reveal
+     7. カード スタガー（reveal 後に時差表示）
   ---------------------------------------------------------- */
   function staggerGrid(containerSelector, itemSelector) {
     const container = document.querySelector(containerSelector);
@@ -170,20 +149,20 @@
     });
   }
 
-  staggerGrid('.case__cards',      '.case-card');
-  staggerGrid('.column__cards',    '.col-card');
-  staggerGrid('.features__grid',   '.feature-card');
-  staggerGrid('.voice__cards',     '.voice-card');
+  staggerGrid('.case__cards',    '.case-card');
+  staggerGrid('.column__cards',  '.col-card');
+  staggerGrid('.features__grid', '.feature-card');
+  staggerGrid('.voice__cards',   '.voice-card');
 
 
   /* ----------------------------------------------------------
-     9. WATERMARK slide-in on scroll
+     8. ウォーターマーク スライドイン
   ---------------------------------------------------------- */
   const wObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '0.55';
+          entry.target.style.opacity   = '0.55';
           entry.target.style.transform = 'translateX(0)';
           wObserver.unobserve(entry.target);
         }
@@ -193,15 +172,15 @@
   );
 
   document.querySelectorAll('.section__watermark').forEach(w => {
-    w.style.opacity = '0';
-    w.style.transform = 'translateX(-30px)';
+    w.style.opacity    = '0';
+    w.style.transform  = 'translateX(-30px)';
     w.style.transition = 'opacity 1s ease, transform 1s ease';
     wObserver.observe(w);
   });
 
 
   /* ----------------------------------------------------------
-     10. CAROUSEL DOTS
+     9. カルーセル ドット（Case Study 等）
   ---------------------------------------------------------- */
   const dots = document.querySelectorAll('.dot');
 
