@@ -54,7 +54,7 @@ html {
 body {
     font-family: var(--font-jp);
     background: var(--c-white);
-    color: #222;
+    color: #333;
     overflow-x: hidden;
     line-height: 1.6;
 }
@@ -97,8 +97,8 @@ section {
 .header {
     position: fixed;
     top: 30px;
-    left: 96px;
-    right: 86px;
+    left: 80px;
+    right: 80px;
     z-index: 100;
     border-radius: 30px;
     background: rgba(255, 255, 255, 0.95);
@@ -335,16 +335,15 @@ section {
     z-index: 10;
 }
 
-.section__watermark {
+.section__ttl {
     display: block;
     font-family: var(--font-en);
     font-weight: 200;
     font-size: 173px;
     line-height: 1;
     letter-spacing: -3.47px;
-    color: var(--c-watermark);
+    color: var(--c-grey-title);
     white-space: nowrap;
-    opacity: 0.55;
 }
 
 .section__label {
@@ -412,8 +411,10 @@ section {
 
 .pill-btn {
     width: 370px;
+    position: relative;
     margin: 0 auto;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0;
     background: var(--c-white);
@@ -687,7 +688,6 @@ section {
     font-family: var(--font-en);
     font-weight: 400;
     font-size: 18.7px;
-    color: var(--c-blue);
     letter-spacing: 0.75px;
 }
 
@@ -705,11 +705,9 @@ section {
    CONTACT SECTION（共通）
    ============================================================ */
 
-.contact {
-    padding: 0 var(--side-pad) 100px;
-}
-
 .contact__inner {
+    width: 80%;
+    margin: auto;
     background: var(--c-blue);
     border-radius: 53px;
     padding: 80px 100px;
@@ -1028,13 +1026,6 @@ section {
     line-height: 1.4;
 }
 
-.feature-card__txt {
-    font-size: 14px;
-    line-height: 1.9;
-    color: var(--c-grey-text);
-    flex: 1;
-}
-
 
 /* ============================================================
    STRENGTHS SECTION（下層ページ共通）
@@ -1135,7 +1126,7 @@ section {
     .hero__event-card { width: 300px; }
 
     /* Section watermark */
-    .section__watermark { font-size: 120px; }
+    .section__ttl { font-size: 120px; }
     .section__header-mask { height: auto; }
 
     /* Service */
@@ -1200,7 +1191,7 @@ section {
     }
 
     /* Section watermark */
-    .section__watermark { font-size: 80px; }
+    .section__ttl { font-size: 80px; }
     .section__header-mask { height: 110px; }
 
     /* Page hero */
