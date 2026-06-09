@@ -260,7 +260,7 @@ section {
     padding-left: 6rem;
     padding-right: 6rem;
     overflow: hidden;
-    background: linear-gradient(145deg, #1a3a9e 0%, #3e64ea 45%, #6a9af0 100%);
+    background: linear-gradient(221deg, #5476ed66 -18.32%, #639ef366 5.62%, #8be8ff14 54.46%), #fbfbfb;
     min-height: 400px;
 }
 
@@ -296,19 +296,10 @@ section {
     gap: 6px;
     font-family: var(--font-en);
     font-weight: 600;
-    font-size: 11px;
+    font-size: 20px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.75);
     margin-bottom: 20px;
-}
-
-.page-hero__label::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.6);
 }
 
 .page-hero__title {
@@ -316,7 +307,6 @@ section {
     font-weight: 900;
     font-size: clamp(36px, 5vw, 64px);
     line-height: 1.2;
-    color: var(--c-white);
     letter-spacing: -1px;
     position: relative;
     z-index: 1;
@@ -894,7 +884,6 @@ section {
 .intro__image {
     border-radius: 20px;
     overflow: hidden;
-    height: 420px;
     position: relative;
 }
 
