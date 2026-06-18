@@ -83,12 +83,15 @@ button {
 }
 
 section {
-    padding: 120px 6rem;
+    padding: 120px 10rem;
 }
 
 /* ユーティリティ背景色 */
 .c-blue-bg { background: var(--c-blue-bg); }
 
+.bg-grey{
+    background: var(--c-grey-bg);
+}
 
 /* ============================================================
    HEADER
@@ -542,10 +545,6 @@ section {
 /* ============================================================
    CASE SECTION（トップページ）
    ============================================================ */
-
-.case {
-    background: var(--c-grey-bg);
-}
 
 .case__cards {
     display: grid;
