@@ -26,7 +26,31 @@
           <ul class="nav__list">
             <li><a href="about.html">私たちについて</a></li>
             <li><a href="case.html">制作実績</a></li>
-            <li><a href="service.html">事業紹介</a></li>
+            <li class="nav__item--has-dropdown">
+              事業紹介
+              <svg
+                class="nav__dropdown-arrow"
+                width="10"
+                height="6"
+                viewBox="0 0 10 6"
+                fill="none"
+              >
+                <path
+                  d="M1 1L5 5L9 1"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <div class="nav__dropdown">
+                <ul class="nav__dropdown-inner">
+                  <li><a href="service.html#strategy">ブランド設計</a></li>
+                  <li><a href="service.html#web">Web制作</a></li>
+                  <li><a href="service.html#maintenance">運用保守</a></li>
+                </ul>
+              </div>
+            </li>
             <li><a href="contact.html">お問い合わせ</a></li>
           </ul>
         </nav>

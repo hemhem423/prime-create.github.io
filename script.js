@@ -2,7 +2,8 @@
    script.js  –  Partners
    Interactions: header scroll, hamburger menu,
    scroll-reveal, smooth anchor, stagger cards,
-   watermark slide-in, scroll indicator, carousel dots
+   watermark slide-in, scroll indicator, carousel dots,
+   dropdown menu（事業紹介）
    ============================================================ */
 
 (function () {
@@ -45,21 +46,45 @@
       }
     });
 
-    // ナビリンク押下でメニューを閉じる
+    // ナビリンク押下でメニューを閉じる（ドロップダウントリガー自身は除く）
     nav.querySelectorAll('a').forEach(link => {
+      if (link.classList.contains('nav__dropdown-trigger')) return;
       link.addEventListener('click', () => {
         nav.classList.remove('open');
         hamburger.querySelectorAll('span').forEach(sp => {
           sp.style.transform = '';
           sp.style.opacity   = '';
         });
+        document.querySelectorAll('.nav__item--has-dropdown.open')
+          .forEach(item => item.classList.remove('open'));
       });
     });
   }
 
 
   /* ----------------------------------------------------------
-     3. SCROLL REVEAL（IntersectionObserver）
+     3. DROPDOWN MENU（事業紹介）
+     - デスクトップ：CSSのhoverで開閉
+     - モバイル（ハンバーガー展開時）：タップで開閉するアコーディオン
+  ---------------------------------------------------------- */
+  document.querySelectorAll('.nav__item--has-dropdown').forEach(item => {
+    const trigger = item.querySelector('.nav__dropdown-trigger');
+    if (!trigger) return;
+
+    trigger.addEventListener('click', (e) => {
+      // モバイルメニュー（ハンバーガー展開中）の場合はアコーディオンとして動作
+      const isMobileMenuOpen = nav && nav.classList.contains('open');
+      if (isMobileMenuOpen) {
+        e.preventDefault();
+        item.classList.toggle('open');
+      }
+      // デスクトップ時はリンクとして通常遷移（service.htmlへ）
+    });
+  });
+
+
+  /* ----------------------------------------------------------
+     4. SCROLL REVEAL（IntersectionObserver）
   ---------------------------------------------------------- */
   const revealTargets = [
     { selector: '.service__item',        delay: 0    },
@@ -96,7 +121,7 @@
 
 
   /* ----------------------------------------------------------
-     4. SCROLL INDICATOR – スクロール後に非表示
+     5. SCROLL INDICATOR – スクロール後に非表示
   ---------------------------------------------------------- */
   const scrollIndicator = document.querySelector('.scroll-indicator');
 
@@ -110,7 +135,7 @@
 
 
   /* ----------------------------------------------------------
-     5. SMOOTH ANCHOR SCROLL（固定ヘッダー分オフセット）
+     6. SMOOTH ANCHOR SCROLL（固定ヘッダー分オフセット）
   ---------------------------------------------------------- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -128,7 +153,7 @@
 
 
   /* ----------------------------------------------------------
-     6. ボタン hover – spring トランジション付与
+     7. ボタン hover – spring トランジション付与
   ---------------------------------------------------------- */
   document.querySelectorAll('.event-arrow, .pill-btn, .contact__icon-btn').forEach(btn => {
     btn.addEventListener('mouseenter', () => {
@@ -139,7 +164,7 @@
 
 
   /* ----------------------------------------------------------
-     7. カード スタガー（reveal 後に時差表示）
+     8. カード スタガー（reveal 後に時差表示）
   ---------------------------------------------------------- */
   function staggerGrid(containerSelector, itemSelector) {
     const container = document.querySelector(containerSelector);
@@ -156,7 +181,7 @@
 
 
   /* ----------------------------------------------------------
-     8. ウォーターマーク スライドイン
+     9. ウォーターマーク スライドイン
   ---------------------------------------------------------- */
   const wObserver = new IntersectionObserver(
     (entries) => {
@@ -180,7 +205,7 @@
 
 
   /* ----------------------------------------------------------
-     9. カルーセル ドット（Case Study 等）
+     10. カルーセル ドット（Case Study 等）
   ---------------------------------------------------------- */
   const dots = document.querySelectorAll('.dot');
 
